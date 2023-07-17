@@ -7,8 +7,8 @@ const Contact = () => {
 
     const {
         contactListData,
-        postContact,
-        putContact,
+        handleInsert,
+        handleEdit,
         handleDelete,
         CfmAlert
     } = useContact()
@@ -20,8 +20,8 @@ const Contact = () => {
                 <ContactList
                     contactListData={contactListData}
                     handleDelete={handleDelete}
-                    handleInsert={postContact}
-                    handleEdit={putContact}
+                    handleInsert={handleInsert}
+                    handleEdit={handleEdit}
                 />
             </Paper>
         </>

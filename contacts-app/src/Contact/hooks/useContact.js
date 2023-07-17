@@ -23,7 +23,7 @@ const useContact = () => {
       }
     )
 
-    const postContact = async (contact) => {
+    const handleInsert = async (contact) => {
       try{
         await insertContact(contact)
         refetch()
@@ -47,7 +47,7 @@ const useContact = () => {
       }
     }
     
-    const putContact = async (id, contact) => {
+    const handleEdit = async (id, contact) => {
       try{
         await updateContact(id, contact)
         refetch()
@@ -106,8 +106,8 @@ const useContact = () => {
 
     return {
       contactListData,
-      postContact,
-      putContact,
+      handleInsert,
+      handleEdit,
       handleDelete,
       CfmAlert    
     }
