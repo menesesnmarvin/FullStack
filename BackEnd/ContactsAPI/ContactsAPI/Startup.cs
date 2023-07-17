@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ContactsAPI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +27,8 @@ namespace ContactsAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IContactService, ContactService>();
+
             services.AddControllers();
 
             services.AddSwaggerGen(c =>
@@ -43,6 +46,11 @@ namespace ContactsAPI
                     },
                 });
             });
+
+            services.AddCors(p => p.AddPolicy("corspolicy", build =>
+            {
+                build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,6 +78,8 @@ namespace ContactsAPI
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("corspolicy");
 
             app.UseEndpoints(endpoints =>
             {
