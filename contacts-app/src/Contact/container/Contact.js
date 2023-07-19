@@ -1,7 +1,7 @@
 import { Paper } from '@mui/material'
 
-import ContactList from '../components/ContactList'
-import useContact from '../hooks/useContact'
+import ContactList from '../components/contact-list/ContactList'
+import useContact from '../container/useContact'
 
 const Contact = () => {
 
