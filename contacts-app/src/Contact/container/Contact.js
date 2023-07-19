@@ -16,7 +16,16 @@ const Contact = () => {
     return (
         <> 
             <CfmAlert/>
-            <Paper sx={{ margin: 'auto', width: '80%', overflow: 'hidden', marginTop: 10, background: "#F4FEFD" }}>
+            <Paper 
+                sx={{ 
+                    margin: 'auto', 
+                    width: '80%', 
+                    overflow: 'hidden', 
+                    marginTop: 6,
+                    marginBottom: 6,
+                    background: "#F4FEFD" 
+                }
+            }>
                 <ContactList
                     contactListData={contactListData}
                     handleDelete={handleDelete}

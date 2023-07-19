@@ -15,7 +15,7 @@ const useContactTable = (contactListData, headCells ) => {
     };
 
     const TblContainer = props => (
-        <TableContainer sx={{ maxHeight: 600 }}>
+        <TableContainer sx={{ maxHeight: '65vh' }}>
             <Table stickyHeader>
                 {props.children}
             </Table>
